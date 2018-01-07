@@ -1,48 +1,40 @@
 package com.spring.boot.topics.services;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.boot.topics.beans.Topic;
 
 @Service
 public class TopicService {
-	private List<Topic> topics = new ArrayList<>(Arrays.asList(
-			new Topic("Spring", "Spring Framework", "Spring Framework Course"),	
-			new Topic("Core Java", "Core Java 8", "Core Java Course"),	
-			new Topic("JavaScript", "JavaScript", "JavaScript Course")	
-			));
+	
+	@Autowired
+	private TopicRepository topicRepo;
 	
 	public List<Topic> getAllTopics()
 	{
+		List<Topic> topics = new ArrayList<>();
+		topicRepo.findAll().forEach(topics::add);
 		return topics;
 	}
 	
 	public Topic getTopic(String id)
 	{
-		return topics.stream().filter(t -> t.getId().equals(id)).findFirst().get();
+		return topicRepo.findOne(id);
 	}
 
 	public void addTopic(Topic topic) {
-		topics.add(topic);
+		topicRepo.save(topic);
 	}
 
 	public void updateTopic(String id, Topic topic) {
-		for(int i=0; i<topics.size(); i++)
-		{
-			Topic tpic = topics.get(i);
-			if(tpic.getId().equals(id))
-			{
-				topics.set(i, topic);
-				return;
-			}
-		}
+		topicRepo.save(topic);
 	}
 
 	public void deleteTopic(String id) {
-		topics.removeIf(t -> t.getId().equals(id));
+		topicRepo.delete(id);
 	}
 }
