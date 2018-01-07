@@ -6,3 +6,6 @@ Spring Boot application Configuration Properties-
 Add application.properties file in resource directory.
 Property keys can be found at location:
 https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+
+Added support for database and JPA.
+For simple Course-API application, please check-out branch: SpringBootExample_NoDatabase
