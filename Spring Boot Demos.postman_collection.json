@@ -1,0 +1,288 @@
+{
+	"info": {
+		"name": "Spring Boot Demos",
+		"_postman_id": "4134e971-68c5-c198-f900-3bd315bbf31a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Topics",
+			"description": "",
+			"item": [
+				{
+					"name": "Get All Topics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:8080/topics",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"topics"
+							]
+						},
+						"description": "Gets All topics present in database"
+					},
+					"response": []
+				},
+				{
+					"name": "Get singleTopics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:8080/topics/CPP",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"topics",
+								"CPP"
+							]
+						},
+						"description": "Gets A single topic present in database"
+					},
+					"response": []
+				},
+				{
+					"name": "Adds a topic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"JavaScript\",\n    \"name\": \"JavaScript\",\n    \"description\": \"JavaScript Description\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/topics",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"topics"
+							]
+						},
+						"description": "Adds a  topic into database"
+					},
+					"response": []
+				},
+				{
+					"name": "Updatess a topic",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"JavaScript\",\n    \"name\": \"JavaScript\",\n    \"description\": \"JavaScript and Angular JS Description\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/topics/JavaScript",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"topics",
+								"JavaScript"
+							]
+						},
+						"description": "Updates topics present in database"
+					},
+					"response": []
+				},
+				{
+					"name": "Deletes a topic",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/topics/JavaScript",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"topics",
+								"JavaScript"
+							]
+						},
+						"description": "Deletes a topic present in db"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Courses",
+			"description": "Courses Test",
+			"item": [
+				{
+					"name": "Get all Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/topics/SQL/courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"topics",
+								"SQL",
+								"courses"
+							]
+						},
+						"description": "Adds a Course to a topic"
+					},
+					"response": []
+				},
+				{
+					"name": "Adds a Course",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"Oracle\",\n    \"name\": \"Oracle\",\n    \"description\": \"SQL With Oracle\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/topics/SQL/courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"topics",
+								"SQL",
+								"courses"
+							]
+						},
+						"description": "Adds a Course to a topic"
+					},
+					"response": []
+				},
+				{
+					"name": "Adds a Course copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"MySQL\",\n    \"name\": \"MySQL\",\n    \"description\": \"SQL With MySQL\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/topics/SQL/courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"topics",
+								"SQL",
+								"courses"
+							]
+						},
+						"description": "Adds a Course to a topic"
+					},
+					"response": []
+				},
+				{
+					"name": "Updates a Course",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"MySQL\",\n    \"name\": \"MySQL 5\",\n    \"description\": \"SQL With MySQL 5\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/topics/SQL/courses/MySQL",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"topics",
+								"SQL",
+								"courses",
+								"MySQL"
+							]
+						},
+						"description": "Adds a Course to a topic"
+					},
+					"response": []
+				},
+				{
+					"name": "Deletes a Course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/topics/SQL/courses/MySQL",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"topics",
+								"SQL",
+								"courses",
+								"MySQL"
+							]
+						},
+						"description": "Adds a Course to a topic"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
